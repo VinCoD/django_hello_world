@@ -1,13 +1,20 @@
 {
-    "builds": [{
-        "src" : "hello_world/wsgi.py",
-        "use" : "@vercel/python",
+  "version": 2,
+  "builds": [
+    {
+      "src": "hello_world/wsgi.py",
+      "use": "@vercel/python",
         "config" : {"maxLambdaSize": "15mb", "runtime" : "python3.9"}
-    }],
-    "routes": [
-        {
-            "src" : "/(.*)",
-            "dest": "hello_world/wsgi.py"
-        }
-    ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "http://django-hello-world/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "hello_world/wsgi.py"
+    }
+  ]
 }
