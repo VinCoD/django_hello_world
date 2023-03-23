@@ -10,6 +10,10 @@
     {
       "src": "/static/(.*)",
       "dest": "https://django-hello-world/static/$1"
+    },
+    {
+      "src" : "/(.*)",
+      "dest": "hello_world/wsgi.py"
     }
   ]
 }
