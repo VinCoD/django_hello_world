@@ -9,11 +9,11 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "http://your-django-app/static/$1"
+      "dest": "http://django-hello-world/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "manage.py"
+      "dest": "hello_world/manage.py"
     }
   ]
 }
